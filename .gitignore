@@ -1,0 +1,15 @@
+/.idea
+/.vscode
+*.log
+*.DS_Store
+/config
+docs
+test
+test.php
+runtime
+favicon.html
+*.cmd
+uploads
+*.lock
+*.lck
+myTest
