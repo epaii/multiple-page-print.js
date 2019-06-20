@@ -8,11 +8,11 @@
 
 
         try {
-            iframe = document.createElement('<iframe frameborder="no"  style="width: 1px; height: 1px; "></iframe>');
+            iframe = document.createElement('<iframe frameborder="no"  style="width: 0px; height: 0px; "></iframe>');
         } catch (e) {
             iframe = document.createElement('iframe');
-            iframe.style.width = "1px";
-            iframe.style.height = "1px";
+            iframe.style.width = "0px";
+            iframe.style.height = "0px";
 
         }
 
