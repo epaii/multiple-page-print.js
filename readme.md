@@ -26,3 +26,12 @@ usege
 
 </body>
 ```
+
+
+打印时间间隔设置
+
+```javascript
+    multiple_page_print.wait(2000).start(["a.html", "b.html"], function (index) {
+                                               alert(index);
+                                           })
+```
