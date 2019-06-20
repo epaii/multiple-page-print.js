@@ -35,3 +35,17 @@ usege
                                                alert(index);
                                            })
 ```
+
+
+打印完成设置
+
+```javascript
+    multiple_page_print.wait(2000).start(
+        ["a.html", "b.html"], 
+        function (index) {
+           alert(index);
+        }
+        ).finish(function() {
+                         alert("finish")
+                           });
+```
