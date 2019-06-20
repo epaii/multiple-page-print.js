@@ -21,7 +21,7 @@
         iframe.onload = function () {
 
             iframe.contentWindow.document.execCommand("print", false, null);
-            _callback(index);
+            if (_callback) _callback(index);
             index++;
             setTimeout(function () {
                 printurl();
@@ -33,6 +33,7 @@
     var index = 0;
     var _callback = null;
     var _befor_callback = null;
+    var _finish_callback = null;
     var _pages = [];
     var _time = 1000;
 
@@ -40,8 +41,11 @@
     function printurl() {
 
         if (_pages[index]) {
-            alert(_pages[index]);
+
             iframe.src = _pages[index];
+        } else {
+            if (_finish_callback)
+                _finish_callback();
         }
 
     }
@@ -59,6 +63,12 @@
         index = 0;
         _befor_callback = befor_callback;
         printurl();
+        return page_print;
+    };
+
+    page_print.finish = function (finish_callback) {
+        _finish_callback = finish_callback;
+        return page_print;
     };
 
 
