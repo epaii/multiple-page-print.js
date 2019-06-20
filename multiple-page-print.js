@@ -23,13 +23,18 @@
             iframe.contentWindow.document.execCommand("print", false, null);
             _callback(index);
             index++;
-            printurl();
+            setTimeout(function () {
+                printurl();
+            }, _time)
+
         };
     };
 
     var index = 0;
     var _callback = null;
+    var _befor_callback = null;
     var _pages = [];
+    var _time = 1000;
 
 
     function printurl() {
@@ -41,12 +46,18 @@
 
     }
 
+    page_print.wait = function (time) {
+        _time = time - 0;
+        return page_print;
+    };
 
-    page_print.start = function (pages, callback) {
+
+    page_print.start = function (pages, callback, befor_callback) {
 
         _pages = pages;
         _callback = callback;
         index = 0;
+        _befor_callback = befor_callback;
         printurl();
     };
 
