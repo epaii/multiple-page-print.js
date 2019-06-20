@@ -20,7 +20,8 @@
 
         iframe.onload = function () {
 
-            iframe.contentWindow.document.execCommand("print", false, null);
+            iframe.contentWindow.print();
+            //iframe.contentWindow.document.execCommand("print", false, null);
             if (_callback) _callback(index);
             index++;
             setTimeout(function () {
